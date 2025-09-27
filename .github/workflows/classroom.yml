@@ -25,7 +25,9 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Setup
-        setup-command: pip3 install -qr requirements.txt
+        setup-command: |
+          pip3 install -qr requirements.txt
+          pip3 install mypy
         command: mypy minitorch/*
         timeout: 10
     - name: Task 0.1
